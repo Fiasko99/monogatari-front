@@ -24,6 +24,7 @@
 </template>
 
 <script>
+// @ui-kit
 import Button from "@/ui-kit/Button.vue";
 import Link from "@/ui-kit/Link.vue";
 

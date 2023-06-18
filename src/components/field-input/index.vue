@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// @ui-kit
 import Input from "@/ui-kit/Input.vue";
 import Label from "@/ui-kit/Label.vue";
 

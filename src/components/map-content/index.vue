@@ -14,7 +14,10 @@
 </template>
 
 <script>
+// @services
 import Fetcher from '@/Fetcher';
+
+// @ui-kit
 import Heading from "@/ui-kit/Heading.vue";
 
 export default {

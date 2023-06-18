@@ -6,9 +6,14 @@
 </template>
 
 <script>
-import Fetcher from '@/Fetcher';
+// @ui-kit
 import Heading from '@/ui-kit/Heading.vue';
+
+// @components
 import Posts from '@/components/posts';
+
+// @services
+import Fetcher from '@/Fetcher';
 
 export default {
   name: 'LocationView',

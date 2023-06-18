@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// @ui-kit
 import Link from "@/ui-kit/Link.vue";
 
 export default {

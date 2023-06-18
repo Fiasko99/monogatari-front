@@ -11,6 +11,7 @@
 </template>
 
 <script>
+// @components
 import MapContent from "@/components/map-content";
 import MapInteractive from "@/components/interactive-map";
 import ListTerritory from "@/components/list-territory";

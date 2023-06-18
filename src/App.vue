@@ -16,10 +16,13 @@
 </template>
 
 <script>
+// @ui-kit
+import Button from "@/ui-kit/Button.vue";
+
+// @components
 import UserMenu from "@/components/user-menu";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
-import Button from "@/ui-kit/Button.vue";
 
 export default {
   components: {

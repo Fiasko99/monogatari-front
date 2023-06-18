@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// @ui-kit
 import Heading from '@/ui-kit/Heading.vue';
 
 export default {

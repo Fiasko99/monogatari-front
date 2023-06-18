@@ -20,8 +20,11 @@
 </template>
 
 <script>
+// @ui-kit
 import Button from "@/ui-kit/Button.vue";
 import Heading from "@/ui-kit/Heading.vue";
+
+// @components
 import FieldInput from "@/components/field-input";
 
 export default {
