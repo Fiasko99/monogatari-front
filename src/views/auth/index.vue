@@ -6,14 +6,14 @@
   <form @submit.prevent="auth" class="auth">
     <div v-if="typeForm === 'in'" class="app-form">
       <Heading h="h3" class="title">Вход</Heading>
-      <FieldInput fieldId="login" v-model="login">Логин</FieldInput>
-      <FieldInput fieldId="password" type="password" v-model="password">Пароль</FieldInput>
+      <FieldInput class="field-input" fieldId="login" v-model="login">Логин</FieldInput>
+      <FieldInput class="field-input" fieldId="password" type="password" v-model="password">Пароль</FieldInput>
     </div>
     <div v-else-if="typeForm === 'up'" class="app-form">
       <Heading h="h3" class="title">Регистрация</Heading>
-      <FieldInput fieldId="login" v-model="login">Логин</FieldInput>
-      <FieldInput fieldId="password" type="password" v-model="password">Пароль</FieldInput>
-      <FieldInput fieldId="email" type="email" v-model="email">Почта</FieldInput>
+      <FieldInput class="field-input" fieldId="login" v-model="login">Логин</FieldInput>
+      <FieldInput class="field-input" fieldId="password" type="password" v-model="password">Пароль</FieldInput>
+      <FieldInput class="field-input" fieldId="email" type="email" v-model="email">Почта</FieldInput>
     </div>
     <Button type="submit">Войти</Button>
   </form>
@@ -45,9 +45,6 @@ export default {
   methods: {
     selectForm(type) {
       this.typeForm = type;
-    },
-    signup() {
-      console.log(this.login, this.password, this.email);
     },
     auth() {
       this.typeForm === 'in' && this.$store.dispatch(
@@ -83,15 +80,17 @@ export default {
   border-radius: 12px;
   background: wheat;
 }
-
+.field-input {
+  width: 50%;
+  margin: 12px auto;
+}
 .app-form {
   margin: 12px auto;
 }
-
 .select-btns {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   margin: 12px auto;
   border: 2px solid thistle;
   padding: 12px;
@@ -99,7 +98,6 @@ export default {
   background: wheat;
   flex-wrap: nowrap;
 }
-
 .select-btn {
   width: 100%;
 }</style>

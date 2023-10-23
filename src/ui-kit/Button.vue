@@ -28,9 +28,18 @@ export default {
   background: papayawhip;
   color: brown;
 }
-.ui-kit-button:active {
-  border: 2px solid thistle;
+.ui-kit-button:hover {
   background: brown;
   color: papayawhip;
+}
+.ui-kit-button:active {
+  background: papayawhip;
+  color: brown;
+}
+.ui-kit-button:disabled {
+  border: none;
+  background: none;
+  color: brown;
+  cursor: default;
 }
 </style>

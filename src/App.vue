@@ -11,6 +11,7 @@
     </template>
   </Header>
   <div class="app-main">
+    <MapInteractive v-if="showInteractiveMap"></MapInteractive>
     <router-view/>
   </div>
 </template>
@@ -20,16 +21,23 @@
 import Button from "@/ui-kit/Button.vue";
 
 // @components
+import MapInteractive from "@/components/interactive-map";
 import UserMenu from "@/components/user-menu";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 
 export default {
   components: {
+    MapInteractive,
+    UserMenu,
     Header,
     Navbar,
     Button,
-    UserMenu,
+},
+  computed: {
+    showInteractiveMap() {
+      return this.$store.getters.showInteractiveMap;
+    }
   },
   async mounted() {
     const token = localStorage.getItem(process.env.VUE_APP_TOKEN_NAME);

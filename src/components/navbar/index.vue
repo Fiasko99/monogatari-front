@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .navbar {
   display: flex;
-  gap: 0.5em;
+  gap: 8px;
   flex-wrap: nowrap;
 }
 </style>

@@ -11,9 +11,9 @@
       :show="showModal" 
       typeAnimate="slide" 
       class="modal">
-      <Link to="#" class="user-links">Профиль</Link>
-      <Link to="#" class="user-links">Персонажи</Link>
-      <Link to="#" class="user-links">Настройки</Link>
+      <Link to="/user/me" class="user-links">Профиль</Link>
+      <Link to="/user/me/characters" class="user-links">Персонажи</Link>
+      <Link to="/user/me/settings" class="user-links">Настройки</Link>
       <Link to="#" class="user-links">Выйти</Link>
     </Modal>
   </div>
@@ -65,6 +65,12 @@ export default {
   border: 1px solid brown;
   width: 20px;
   margin: 4px auto;
+}
+.user-menu-btn:hover > .line {
+  border-color: wheat;
+}
+.user-menu-btn:active > .line {
+  border-color: brown;
 }
 .modal {
   top: 40px;

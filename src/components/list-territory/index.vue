@@ -65,6 +65,6 @@ export default {
   padding: 6px;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 0.5em;
+  gap: 8px;
 }
 </style>

@@ -7,9 +7,11 @@
       :id="fieldId" 
       :name="fieldId" 
       :type="type" 
-      class="input" 
+      class="input"
       @input="$emit('update:modelValue', $event.target.value)" 
-      :required="true"/>
+      :required="!disabled || !readonly"
+      :readonly="readonly"
+      :disabled="disabled" />
   </div>
 </template>
 
@@ -29,6 +31,14 @@ export default {
       type: String,
       default: () => 'text'
     },
+    disabled: {
+      type: Boolean,
+      default: () => false,
+    },
+    readonly: {
+      type: Boolean,
+      default: () => false,
+    },
     modelValue: String,
   },
   emits: ['update:modelValue'],
@@ -40,10 +50,6 @@ export default {
 </script>
 
 <style scoped>
-.field-input {
-  width: 50%;
-  margin: 12px auto;
-}
 .label {
   display: block;
   text-align: left;
@@ -52,21 +58,5 @@ export default {
   font-weight: bold;
   color: brown;
   cursor: pointer;
-}
-.input {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid thistle;
-  background: papayawhip;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  font-size: 14px;
-  color: brown;
-  font-weight: bold;
-  padding: 6px;
-}
-.input:focus {
-  outline: none;
-  display: block;
 }
 </style>

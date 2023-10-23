@@ -12,6 +12,29 @@ const routes = [
     component: () => import('../views/location')
   },
   {
+    path: '/user/:login',
+    name: 'user',
+    component: () => import('../views/user'),
+    children: [
+      {
+        path: '',
+        name: 'user-default',
+        component: () => import('../views/user-default'),
+        props: true,
+      },
+      {
+        path: 'characters',
+        name: 'characters',
+        component: () => import('../views/characters'),
+      },
+      {
+        path: 'settings',
+        name: 'settings',
+        component: () => import('../views/settings'),
+      },
+    ],
+  },
+  {
     path: '/auth',
     name: 'Auth',
     component: () => import('../views/auth')

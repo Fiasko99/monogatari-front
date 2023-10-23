@@ -7,7 +7,7 @@
       :key="state.name"
       class="state">
       <Heading h="h3">{{ state.name }}</Heading>
-      <hr class="state-hr-localities">
+      <Hr />
       <slot name="localities" :localities="state.localities"></slot>
     </div>
   </div>
@@ -19,6 +19,7 @@ import Fetcher from '@/Fetcher';
 
 // @ui-kit
 import Heading from "@/ui-kit/Heading.vue";
+import Hr from "@/ui-kit/Hr.vue";
 
 export default {
   name: 'MapContentComponent',
@@ -29,6 +30,7 @@ export default {
   },
   components: {
     Heading,
+    Hr,
   },
   async mounted() {
     this.states = await Fetcher.get('/state/all')
@@ -47,11 +49,5 @@ export default {
   background: wheat;
   margin: 12px auto;
   padding: 6px 12px;
-}
-.state-hr-localities {
-  margin: 0;
-  border: none;
-  background-color: thistle;
-  height: 2px;
 }
 </style>

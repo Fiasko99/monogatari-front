@@ -4,7 +4,8 @@
     :id="id" 
     :name="name" 
     @input="$emit('update:modelValue', $event.target.value)"
-    :required="required">
+    :required="required"
+    class="input">
 </template>
 
 <script>
@@ -25,5 +26,20 @@ export default {
 </script>
 
 <style scoped>
-
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid thistle;
+  background: papayawhip;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-size: 14px;
+  color: brown;
+  font-weight: bold;
+  padding: 6px;
+}
+.input:focus {
+  outline: none;
+  display: block;
+}
 </style>

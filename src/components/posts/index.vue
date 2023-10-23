@@ -7,18 +7,24 @@
       :ref="`post#${post.id}`"
       class="post">
         <div class="left">
-          <Link :to="`/user/${post.characterName}`">{{ post.characterName }}</Link>
+          <Heading h="h3">
+            <Link :to="`/user/${post.characterName}`">{{ post.characterName }}</Link>
+          </Heading>
           <div class="avatar">
-            <img src="#" alt="avatar" />
+            <img src="http://localhost:3210/cdn/assets/avatar.svg" alt="avatar" />
           </div>
         </div>
         <div class="right">
           <div class="post-heading">
-            <Button title="Скопировать" @click="copyLinkToPost(post.id)">Пост#{{ post.id }}</Button>
-            <span>{{ new Date(post.createdAt).toLocaleString() }}</span>
+            <Button 
+              title="Скопировать" 
+              @click="copyLinkToPost(post.id)">Пост#{{ post.id }}</Button>
+            <span class="time">{{
+              new Date(post.createdAt).toLocaleString()  
+            }}</span>
           </div>
           <hr>
-          <p>{{ post.text }}</p>
+          <p class="text">{{ post.text }}</p>
         </div>
     </div>
   </div>
@@ -26,6 +32,7 @@
 
 <script>
 // @ui-kit
+import Heading from '@/ui-kit/Heading.vue';
 import Button from '@/ui-kit/Button.vue';
 import Link from '@/ui-kit/Link.vue';
 
@@ -39,6 +46,7 @@ export default {
     }
   },
   components: {
+    Heading,
     Button,
     Link,
   },
@@ -72,7 +80,7 @@ export default {
   padding: 12px;
   background: wheat;
   border-radius: 6px;
-  border: 1px solid thistle;
+  border: 2px solid thistle;
   margin: 12px 0;
 }
 .left {
@@ -86,5 +94,12 @@ export default {
 .post-heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.text, .time {
+  color: brown;
+}
+.avatar {
+  width: 100%;
 }
 </style>

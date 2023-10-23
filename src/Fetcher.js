@@ -70,7 +70,7 @@ class Http {
   createConfig() {
     this._http.interceptors.response.use(
       res => res.data,
-      err => Promise.reject(err.response)
+      err => Promise.reject(err.response.data)
     );
   }
 }

@@ -1,12 +1,14 @@
 <template>
   <div class="map">
-    <Heading h="h1">Интерактивная карта</Heading>
+    <Heading h="h2">Интерактивная карта</Heading>
+    <Hr />
   </div>
 </template>
 
 <script>
 // @ui-kit
 import Heading from '@/ui-kit/Heading.vue';
+import Hr from "@/ui-kit/Hr.vue";
 
 export default {
     name: "MapComponent",
@@ -17,6 +19,7 @@ export default {
     },
     components: {
       Heading,
+      Hr,
     }
 }
 </script>
@@ -24,5 +27,6 @@ export default {
 <style scoped>
   .map {
     text-align: center;
+    margin: 12px auto;
   }
 </style>
